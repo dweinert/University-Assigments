@@ -1,0 +1,210 @@
+"""
+Project 3
+Auhtor @Daniel Weinert
+Created on 8/3/21
+"""
+def Program1():
+    print("""
+----------------------------
+    Welcome to program 1
+     by Daniel Weinert
+----------------------------""")
+    
+    #Initilize vars
+    counter = 0
+    userL = []
+    userInput = 0
+    total = 0
+
+    #loop for input and check for existing number
+    while counter != 10:
+        userInput = int(input("Please enter an integer: "))
+        if not userInput in userL:
+            userL.append(userInput)
+            counter += 1
+    
+    #print out list
+    print(*userL, sep = ", ") 
+    
+    #print/calc total sum
+    for x in range(len(userL)):
+        total += userL[x]
+    print("Total sum of the list: ", total)
+    
+    #print/calc total avg
+    avg = total / counter
+    print("Average of list is: ", avg)
+    
+def CountLetters(word):
+    #initilize vars
+    countUpper = 0
+    countLower = 0
+    
+    #run loop for each char to check if its in the range of uppercase or lowercase letter
+    for x in word:
+        
+        if x >= 'A' and x <= 'Z':
+            countUpper += 1
+        
+        if x >= 'a' and x <= 'z':
+            countLower += 1
+    
+    #return the total amount of each
+    return countUpper, countLower
+
+def Program2():
+    print("""
+----------------------------
+    Welcome to program 2
+     by Daniel Weinert
+----------------------------""")
+    
+    #call function to count the lowercase letters and uppercase letters, pass thru input from user  
+    totalUpper, totalLower = CountLetters(input("Enter a sentence to count the uppercase and lowercase letters: "))
+    
+    #output total count of letters
+    print(f"The input contains {totalUpper} uppercase letters and {totalLower} lowercase letters")
+    
+def ApplyDiscount(saleA, discountP):
+    discountA = saleA - (saleA * discountP)
+    return discountA
+
+def Program3():
+    print("""
+----------------------------
+    Welcome to program 3
+     by Daniel Weinert
+----------------------------""")
+    
+    #initlize vars
+    saleID = int(input("-----\nEnter first Sale ID: "))
+    saleIDL = []
+    saleAmountL = []
+    discountPercentageL = []
+    discountAmountL = []
+    cnt = 0
+    totalAmountDiscounts = 0.0
+    avgAmountDiscounts = 0.0
+    
+    #loop to take in each sale
+    while saleID != -1:
+        saleIDL.append(int(saleID))
+        saleAmountL.append(float(input("Enter sale amount: $")))
+        discountPercentageL.append(float(input("Enter discount percentage (decimal): ")))
+        discountAmountL.append(ApplyDiscount(saleAmountL[cnt], discountPercentageL[cnt]))
+        totalAmountDiscounts += discountAmountL[cnt]
+        cnt += 1
+        saleID = int(input("-----\nEnter another Sale ID: "))
+    
+    #loop for each sale to print out data
+    for x in range(len(saleIDL)):
+        print(f"""--
+Sale ID: {saleIDL[x]}
+Sale Amount: ${round(saleAmountL[x], 2)}
+Discount %: {(discountPercentageL[x])}
+Discounted Sale Amount: ${round(discountAmountL[x], 2)}
+--""")
+        
+        print(f"""
+Total Amount of Discounted sales: ${round(totalAmountDiscounts, 2)}
+Average Amount of Discounted sales: ${round(totalAmountDiscounts / cnt, 2)}
+""")
+
+#Launch each program
+Program1()
+Program2()
+Program3()
+
+
+Run:
+----------------------------
+    Welcome to program 1    
+     by Daniel Weinert      
+----------------------------
+Please enter an integer: 2
+Please enter an integer: 4
+Please enter an integer: 8
+Please enter an integer: 16
+Please enter an integer: 32
+Please enter an integer: 64
+Please enter an integer: 128
+Please enter an integer: 256
+Please enter an integer: 512
+Please enter an integer: 1024
+2, 4, 8, 16, 32, 64, 128, 256, 512, 1024
+Total sum of the list:  2046
+Average of list is:  204.6
+
+----------------------------
+    Welcome to program 2
+     by Daniel Weinert
+----------------------------
+Enter a sentence to count the uppercase and lowercase letters: Helllo World!
+The input contains 2 uppercase letters and 9 lowercase letters
+
+----------------------------
+    Welcome to program 3
+     by Daniel Weinert
+----------------------------
+-----
+Enter first Sale ID: 111
+Enter sale amount: $55555
+Enter discount percentage (decimal): 0.111
+-----
+Enter another Sale ID: 222
+Enter sale amount: $44444
+Enter discount percentage (decimal): 0.102
+-----
+Enter another Sale ID: 333
+Enter sale amount: $33333
+Enter discount percentage (decimal): 0.093
+-----
+Enter another Sale ID: 444
+Enter sale amount: $22222
+Enter discount percentage (decimal): 0.084
+-----
+Enter another Sale ID: -1
+--
+Sale ID: 111
+Sale Amount: $55555.0
+Discount %: 0.111
+Discounted Sale Amount: $49388.39
+--
+
+Total Amount of Discounted sales: $139887.49
+Average Amount of Discounted sales: $34971.87
+
+--
+Sale ID: 222
+Sale Amount: $44444.0
+Discount %: 0.102
+Discounted Sale Amount: $39910.71
+--
+
+Total Amount of Discounted sales: $139887.49
+Average Amount of Discounted sales: $34971.87
+
+--
+Sale ID: 333
+Sale Amount: $33333.0
+Discount %: 0.093
+Discounted Sale Amount: $30233.03
+--
+
+Total Amount of Discounted sales: $139887.49
+Average Amount of Discounted sales: $34971.87
+
+--
+Sale ID: 444
+Sale Amount: $22222.0
+Discount %: 0.084
+Discounted Sale Amount: $20355.35
+--
+
+Total Amount of Discounted sales: $139887.49
+Average Amount of Discounted sales: $34971.87
+
+
+
+
+

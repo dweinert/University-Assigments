@@ -1,0 +1,50 @@
+"""
+Homework 7: Program 3
+Auhtor @Daniel Weinert
+Created on 7/29/21
+"""
+print("""-----------------------
+       Program 3
+   by Daniel Weinert
+        7/29/21
+-----------------------
+""")
+#initilize vars
+c = 0
+userF = input("Please enter your first value: ")
+userFL = []
+
+#while loops collects inputs till user enters "done"
+while userF != "done":
+    userFL.append(float(userF))
+    userF = input("Please enter another value or type done to finish: ")
+    c += 1
+
+#print out the meta data
+print(f"""
+Amount of numbers entered: {c}
+Sum of all numbers: {sum(userFL)}
+Average of all numbers: {sum(userFL) / c}
+""")
+
+
+
+Run:
+-----------------------
+       Program 3
+   by Daniel Weinert
+        7/29/21
+-----------------------
+
+Please enter your first value: 3.3
+Please enter another value or type done to finish: 5
+Please enter another value or type done to finish: 2.6
+Please enter another value or type done to finish: 2.3
+Please enter another value or type done to finish: 222
+Please enter another value or type done to finish: 6.4
+Please enter another value or type done to finish: 3.2
+Please enter another value or type done to finish: done
+
+Amount of numbers entered: 7
+Sum of all numbers: 244.79999999999998
+Average of all numbers: 34.97142857142857

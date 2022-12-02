@@ -1,0 +1,54 @@
+"""
+PSC 2110 - Homework 5: Take 5 inputs and output them plus their sum & avg
+Created on 7/7/2021
+@author: Daniel Weinert
+"""
+
+# initialize array
+numbers = [0.0 for i in range(5)]
+
+# loop to collect the inputs
+print("Enter 5 values to see their combined sum and average \n------------------------")
+counter = 0
+while counter < 5:
+    numbers[counter] = float(input("Please enter the next number: "))
+    counter += 1
+
+# loop to print out the inputs
+print("\nYour five inputs were: \n------------------------")
+counter = 0
+while counter < 5:
+    print((round(numbers[counter], 2)))
+    counter += 1
+
+# calculations for sum & avg
+sumOutput = sum(numbers)
+sumAvg = sumOutput / len(numbers)
+print("\nThe total sum for all the inputs comes out to: " + str(round(sumOutput, 2))
+      + " \nand the average for all the inputs is: " + str(round(sumAvg, 2)))
+
+
+
+
+Run:
+
+Enter 5 values to see their combined sum and average
+------------------------
+Please enter the next number: 11.11
+Please enter the next number: 22.22
+Please enter the next number: 33.33
+Please enter the next number: 44.44
+Please enter the next number: 55.55
+
+Your five inputs were: 
+------------------------
+11.11
+22.22
+33.33
+44.44
+55.55
+
+The total sum for all the inputs comes out to: 166.65 
+and the average for all the inputs is: 33.33
+
+
